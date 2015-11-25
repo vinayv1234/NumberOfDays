@@ -21,8 +21,15 @@ namespace NumberOfDays
                 // Difference in days
                 double numberOfDays = (currentDate - dob).TotalDays;
 
-                // Print the age in days
-                Console.WriteLine("Age = {0}", numberOfDays);
+                if (numberOfDays <= 0) {
+                    Console.WriteLine("Please enter your correct date of birth. It cannot be in future.");
+                    Console.WriteLine("Please restart the program and enter the date in dd-mm-yyyy format");
+                }
+                else {
+                    // Print the age in days
+                    Console.WriteLine("Age = {0}", numberOfDays);
+                }
+                
             }
             catch (Exception ex) {
                 Console.WriteLine(ex.Message);
